@@ -1,7 +1,10 @@
 package pl.naute.comparator.sample;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.Objects;
 
 public class Main {
 
@@ -22,6 +25,24 @@ public class Main {
 		Arrays.sort(names, (String first, String second) -> second.length() - first.length());
 		
 		System.out.println(Arrays.toString(names));
+		
+		ArrayList<String> nameCollection = new ArrayList<String>(Arrays.asList(names));
+		
+		System.out.println(nameCollection);
+		
+		nameCollection.removeIf(e -> e == "Basia");
+		
+		System.out.println(nameCollection);
+		
+		nameCollection.add(null);
+		
+		System.out.println(nameCollection);
+		
+		nameCollection.removeIf(Objects::isNull);
+		
+		System.out.println(nameCollection);
+		
+		
 		
 	}
 
